@@ -33,8 +33,10 @@ func main() {
 }
 
 var movies = []movieResponse{
-	{ID: "inception", Title: "Inception", Rows: 5, SeatsPerRow: 8},
-	{ID: "dune", Title: "Dune: Part Two", Rows: 4, SeatsPerRow: 6},
+	{ID: "kolobok", Title: "Последний богатырь. Колобок (2026)", Rows: 5, SeatsPerRow: 5},
+	{ID: "dune", Title: "Дюна: Часть вторая", Rows: 8, SeatsPerRow: 10},
+	{ID: "chelovek-pauk", Title: "Человек-паук: Новый день", Rows: 10, SeatsPerRow: 15},
+	{ID: "odisseya", Title: "Одиссея", Rows: 10, SeatsPerRow: 15},
 }
 
 func listMovies(w http.ResponseWriter, r *http.Request) {

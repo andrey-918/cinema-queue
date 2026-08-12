@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cinema Booking</title>
+    <title>Cinema queue</title>
     <style>
       :root {
         --bg: #f6f7fb;
@@ -73,6 +73,7 @@
         display: flex;
         gap: 0.9rem;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .movie-card {
@@ -83,6 +84,7 @@
         cursor: pointer;
         transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
         min-width: 180px;
+        text-align: center;
       }
 
       .movie-card:hover {
@@ -115,11 +117,13 @@
         gap: 1.25rem;
         align-items: flex-start;
         flex-wrap: wrap;
+        justify-content: center;
       }
 
       .screen-area {
         flex: 1;
         min-width: 320px;
+        max-width: 800px;
         background: var(--surface);
         border: 1px solid var(--border);
         border-radius: 12px;
@@ -159,6 +163,7 @@
         display: flex;
         gap: 0.42rem;
         align-items: center;
+        justify-content: center;
       }
 
       .row-label {
@@ -353,7 +358,7 @@
   </head>
   <body>
     <header>
-      <h1>Cinema Booking</h1>
+      <h1>Бронирование билетов</h1>
       <div class="user-id" id="userBadge"></div>
     </header>
 
@@ -361,7 +366,7 @@
 
     <div class="content" id="mainContent" style="display: none">
       <div class="screen-area">
-        <div class="screen-label">Screen</div>
+        <div class="screen-label">Экран</div>
         <div class="screen-bar"></div>
         <div class="seat-grid" id="seatGrid"></div>
         <div class="legend">
@@ -370,28 +375,28 @@
               class="legend-swatch"
               style="background: var(--available)"
             ></div>
-            Available
+            Свободно
           </div>
           <div class="legend-item">
             <div
               class="legend-swatch"
               style="background: var(--held-mine)"
             ></div>
-            Your hold
+            Вы выбрали
           </div>
           <div class="legend-item">
             <div
               class="legend-swatch"
               style="background: var(--held-other)"
             ></div>
-            Other hold
+            В процессе бронирования
           </div>
           <div class="legend-item">
             <div
               class="legend-swatch"
               style="background: var(--confirmed)"
             ></div>
-            Confirmed
+            Занято
           </div>
         </div>
       </div>
@@ -448,9 +453,9 @@
               escapeHtml(m.title) +
               "</h3><p>" +
               m.rows +
-              " rows &times; " +
+              " рядов &times; " +
               m.seats_per_row +
-              " seats</p>";
+              " мест</p>";
             card.addEventListener("click", function () {
               selectMovie(m);
             });
