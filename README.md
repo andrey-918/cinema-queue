@@ -4,9 +4,9 @@
 Сервер написан на **Go** (net/http), данные о бронях хранятся в **Redis**. Интерфейс — статический HTML/JS.
 
 ![1](./1.png)
-https://github.com/andrey-918/cinema-queue/blob/main/2.png
-https://github.com/andrey-918/cinema-queue/blob/main/3.png
-https://github.com/andrey-918/cinema-queue/blob/main/4.png
+![2](./2.png)
+![3](./3.png)
+![4](./4.png)
 ---
 
 ## Возможности
