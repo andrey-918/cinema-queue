@@ -550,7 +550,7 @@
         // --- Hold / Confirm / Release ---
 
         function holdSeat(seatID) {
-          if (activeSession) return; // already holding a seat
+          if (activeSession) return;
           api(
             "POST",
             "/movies/" + selectedMovie.id + "/seats/" + seatID + "/hold",
@@ -581,7 +581,7 @@
               clearTimerInterval();
               activeSession = null;
               fetchSeats();
-              showCheckoutStatus("Confirmed!", "success");
+              showCheckoutStatus("Забронировано!", "success");
             })
             .catch(function (err) {
               showCheckoutStatus(err.message, "error");
@@ -611,20 +611,20 @@
           var area = document.getElementById("checkoutArea");
           area.innerHTML =
             '<div class="checkout">' +
-            "<h3>Checkout</h3>" +
-            '<div class="checkout-info"><span>Seat:</span> ' +
+            "<h3>Бронирование</h3>" +
+            '<div class="checkout-info"><span>Место:</span> ' +
             escapeHtml(activeSession.seatID) +
             "</div>" +
-            '<div class="checkout-info"><span>Movie:</span> ' +
+            '<div class="checkout-info"><span>Фильм:</span> ' +
             escapeHtml(activeSession.movieID) +
             "</div>" +
-            '<div class="checkout-info"><span>Session:</span> ' +
+            '<div class="checkout-info"><span>Номер заказа:</span> ' +
             activeSession.sessionID.slice(0, 8) +
             "&hellip;</div>" +
             '<div class="timer" id="timer">--:--</div>' +
             '<div class="checkout-buttons">' +
-            '<button class="btn btn--confirm" id="btnConfirm">Confirm</button>' +
-            '<button class="btn btn--release" id="btnRelease">Release</button>' +
+            '<button class="btn btn--confirm" id="btnConfirm">Подтвердить</button>' +
+            '<button class="btn btn--release" id="btnRelease">Отменить</button>' +
             "</div>" +
             '<div id="checkoutStatus"></div>' +
             "</div>";
@@ -685,7 +685,7 @@
             clearTimerInterval();
             activeSession = null;
             fetchSeats();
-            showCheckoutStatus("Hold expired", "error");
+            showCheckoutStatus("Время бронирование закончилось", "error");
           }
         }
 
