@@ -3,6 +3,7 @@
 Мини-приложение для бронирования мест в кинотеатре с **hold-сессией** (резервом на ограниченное время) и подтверждением брони.  
 Сервер написан на **Go** (net/http), данные о бронях хранятся в **Redis**. Интерфейс — статический HTML/JS.
 
+https://github.com/andrey-918/cinema-queue/blob/main/booking.mov
 <video src="https://github.com/andrey-918/cinema-queue/blob/main/booking.mov" width="600" controls></video>
 ---
 
